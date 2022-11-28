@@ -1,2 +1,12 @@
-![2](https://user-images.githubusercontent.com/72222999/204315098-1f935b99-45d6-4a08-aa7a-c1875a6dae09.PNG)
+
+### Devops Exam
 ![branch](https://user-images.githubusercontent.com/72222999/204315102-14fa75f3-2027-40a8-95c9-8b78f333b758.PNG)
+For å kunne beskytte arbeidsprossesen er det lurt å sette opp branch-protection. Dette vil gjøre at vi kan legge til noen regler for å begrene hva som blir pushet opp til main. For å kunne gjøre det må du først gå inn på settings -> Branches -> Add Branch Protection Rule. 
+
+
+![2](https://user-images.githubusercontent.com/72222999/204315098-1f935b99-45d6-4a08-aa7a-c1875a6dae09.PNG)
+
+Her krysset jeg av på "Require a pull request before merging" som gjør at alle commits som blir gjort må bli akseptert med en pull request før de blir merget inn i main. 
+Med dette kan ikke en singel person ødelegge hele applikasjonen. Jeg la også til "Require Approval" som bare sier at noen må godkjenne commiten. 
+
+Litt lenger ned på siden finner du Require status checks to pass before merging, jeg aktiverte den nedenfor som heter Require branches to be up to date before merging. Der valgte jeg "build" som er en jobb i ci.yml som sørge for at mvn bygger applikasjonen med grønne tester. Om noen prøver å pushe uten at noen tester eller applikasjone ikke vil bygge, så vil denne reglen stoppe commiten av å komme inn i main. 
