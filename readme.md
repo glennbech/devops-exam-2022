@@ -281,6 +281,7 @@ Beskriv med egne ord;
 * Å release kode ofte kan også by på utfordringer. Beskriv hvilke- og hvordan vi kan bruke DevOps prinsipper til å redusere
   eller fjerne risiko ved hyppige leveraner.
 
+
 ## Del 2 - CI
 
 Konsulentene som har jobbet med innføring av DevOps har startet på en GitHub actions workflow for kontinuerlig
