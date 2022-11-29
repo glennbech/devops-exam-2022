@@ -12,4 +12,15 @@ Med dette kan ikke en singel person ødelegge hele applikasjonen. Jeg la også t
 Litt lenger ned på siden finner du Require status checks to pass before merging, jeg aktiverte den nedenfor som heter Require branches to be up to date before merging. Der valgte jeg "build" som er en jobb i ci.yml som sørge for at mvn bygger applikasjonen med grønne tester. Om noen prøver å pushe uten at noen tester eller applikasjone ikke vil bygge, så vil denne reglen stoppe commiten av å komme inn i main. 
 
 
+### DOCKER
+
+## Oppgave 1
+
 Grunnen til at docker feiler for meg er at jeg ikke har ritkig secrets som de har på docker.yml. Når jeg la til docker brukernavnet mitt som DOCKER_HUB_USERNAME og passordet mitt som DOCKER_HUB_TOKEN kjørte docker jobben grønt. Det skal også sies at denne jobben gjør containeren deres public for alle til å kjøre.
+
+## Oppgave 2
+Først må jeg endre på dockerfilen slik at den bygger en container som har alle verktøyene applikasjon trenger for å kjøre, derfor må jeg også kopiere med pom.xml filen og kjøre mvn package. sier jeg til dockerfilen at han skal bruke den ferdig lagde applikasjon som er en JAR fil.
+
+Etter det måtte jeg endre på workflowen, jeg antok at oppgaven mente at alt skulle forstette å være public kun på docker. Derfor logget jeg inn på docker i yml og bygde en shopiflytestingdocker, jeg ga den et dumt navn med at jeg visste at den skulle bli tatt ned fra public uansett. Jeg måtte fjerne litt unødvendig kodei yml. (mulig jeg logger inn 2 ganger, får sjekke dette til slutt).
+
+## Oppgave 3
