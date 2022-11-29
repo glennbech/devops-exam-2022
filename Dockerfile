@@ -1,4 +1,4 @@
-FROM maven:3.6-jdk-11 as DockerBuilder
+FROM maven:3.6-jdk-11 as builder
 WORKDIR /app
 COPY pom.xml .
 COPY src ./src
