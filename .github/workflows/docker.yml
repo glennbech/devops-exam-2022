@@ -30,6 +30,6 @@ jobs:
       - name: Build and push
         run: |
           docker login
-          docker build . -t shopiflytestingdocker
-          docker tag shopiflytestingdocker thonems/shopiflytestingdocker
-          docker push thonems/shopiflytestingdocker
+          docker build . -t shopifly
+          docker tag shopiflytestingdocker thonems/shopifly
+          docker push thonems/shopifly

@@ -21,6 +21,6 @@ Grunnen til at docker feiler for meg er at jeg ikke har ritkig secrets som de ha
 ## Oppgave 2
 Først må jeg endre på dockerfilen slik at den bygger en container som har alle verktøyene applikasjon trenger for å kjøre, derfor må jeg også kopiere med pom.xml filen og kjøre mvn package. sier jeg til dockerfilen at han skal bruke den ferdig lagde applikasjon som er en JAR fil.
 
-Etter det måtte jeg endre på workflowen, jeg antok at oppgaven mente at alt skulle forstette å være public kun på docker. Derfor logget jeg inn på docker i yml og bygde en shopiflytestingdocker, jeg ga den et dumt navn med at jeg visste at den skulle bli tatt ned fra public uansett. Jeg måtte fjerne litt unødvendig kodei yml. (mulig jeg logger inn 2 ganger, får sjekke dette til slutt).
+Etter det måtte jeg endre på workflowen, jeg antok at oppgaven mente at alt skulle forstette å være public kun på docker. Derfor logget jeg inn på docker i yml og bygde en shopifly, når jeg nå skriver docker run thonems/shopifly laster den ned containeren og kjører den uten problemer. 
 
 ## Oppgave 3
