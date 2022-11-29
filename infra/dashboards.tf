@@ -1,6 +1,5 @@
 resource "aws_cloudwatch_dashboard" "main" {
   dashboard_name = var.candidate_id
-## Jim; seriously! we can use any word here.. How cool is that?
   dashboard_body = <<DEATHSTAR
 {
   "widgets": [

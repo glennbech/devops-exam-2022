@@ -28,3 +28,12 @@ Jeg tolket oppgaven som at containeren skulle vært i java jdk 11 og ikke 8, der
 
 bildet av ECR!
 Jeg opprettet et repository ved navn 1022 som er kandidatnr. Her blir det autmoatisk lastet opp fra github actions hvor navnet er git commit iden. I bilde er det 2 andre tags som heter latest og untagget, som er fra litt tildigere når jeg prøvde ut. I oppgaven stod det bare at den skulle ha tag til commit id.
+
+### MICROMETER
+
+
+### Terraform and Cloudwatch
+
+## Oppgave 1
+
+Problemene til gaffel kommer fra at jim allerede har opprettet en s3 bucket med terraform fra før. Når terraform oppretterer noe i miljøet vil den lage en state-fil hvor den holder kontroll på hva som har blitt laget eller slettet. Når folkene i gaffel har kjørt "terraform apply" ble de filene opprettet. Om state filene ikke hadde blitt slettet ville terraform visst hva den skulle gjøre, men nå vet den ikke hva som er i miljøet, derfor prøver den å lage s3 bucketen på nytt. De har mest sannsynligvis slettet denne bucketen fra før, men det vet ikke terraform uten statefiles.
