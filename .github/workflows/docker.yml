@@ -29,6 +29,10 @@ jobs:
 
       - name: Build and push
         uses: docker/build-push-action@v3
+        run: |
+          docker tag shopiflytestingdocker thonems/shopiflytestingdocker
+          docker build . -t shopiflytestingdocker
+          docker push thonems/shopiflytestingdocker
         with:
           context: .
           file: ./Dockerfile
