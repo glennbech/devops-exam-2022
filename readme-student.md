@@ -8,7 +8,11 @@
 ## Del 2 - CI
 
 ### Oppgave 1
-For at den skal lages på pull request og for hvert push til main![image](https://user-images.githubusercontent.com/72222999/204775670-354fcc08-b48f-4858-97cf-574894d3d2f6.png)
+![image](https://user-images.githubusercontent.com/72222999/204775670-354fcc08-b48f-4858-97cf-574894d3d2f6.png)
+For at den skal lages på pull request og for hvert push til main legger jeg til dette i CI.yml istedenfor workflow_dispatch. 
+
+#### Oppgave 2
+
 
 
 ![branch](https://user-images.githubusercontent.com/72222999/204315102-14fa75f3-2027-40a8-95c9-8b78f333b758.PNG)
@@ -21,6 +25,8 @@ Her krysset jeg av på "Require a pull request before merging" som gjør at alle
 Med dette kan ikke en singel person ødelegge hele applikasjonen. Jeg la også til "Require Approval" som bare sier at noen må godkjenne commiten. 
 
 Litt lenger ned på siden finner du Require status checks to pass before merging, jeg aktiverte den nedenfor som heter Require branches to be up to date before merging. Der valgte jeg "build" som er en jobb i ci.yml som sørge for at mvn bygger applikasjonen med grønne tester. Om noen prøver å pushe uten at noen tester eller applikasjone ikke vil bygge, så vil denne reglen stoppe commiten av å komme inn i main. 
+
+### Oppgave 3
 
 
 ### DOCKER
