@@ -1,5 +1,16 @@
 
-### Devops Exam
+# Devops Exam
+## Del 1 DevOps-prinsipper
+
+
+
+
+## Del 2 - CI
+
+### Oppgave 1
+For at den skal lages på pull request og for hvert push til main![image](https://user-images.githubusercontent.com/72222999/204775670-354fcc08-b48f-4858-97cf-574894d3d2f6.png)
+
+
 ![branch](https://user-images.githubusercontent.com/72222999/204315102-14fa75f3-2027-40a8-95c9-8b78f333b758.PNG)
 For å kunne beskytte arbeidsprossesen er det lurt å sette opp branch-protection. Dette vil gjøre at vi kan legge til noen regler for å begrene hva som blir pushet opp til main. For å kunne gjøre det må du først gå inn på settings -> Branches -> Add Branch Protection Rule. 
 
