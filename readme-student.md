@@ -9,6 +9,7 @@
 
 ### Oppgave 1
 ![image](https://user-images.githubusercontent.com/72222999/204775670-354fcc08-b48f-4858-97cf-574894d3d2f6.png)
+
 For at den skal lages på pull request og for hvert push til main legger jeg til dette i CI.yml istedenfor workflow_dispatch. 
 
 #### Oppgave 2
