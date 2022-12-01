@@ -5,9 +5,9 @@ terraform {
       version = "4.33.0"
     }
   }
-  backend "aws_s3_bucket" {
-    bucket = "analytics-state-files"
-    key    = "1022-shop.state"
+  backend "s3" {
+    bucket = "analytics-1022"
+    key    = "analytics-1022.state"
     region = "eu-west-1"
   }
 }
