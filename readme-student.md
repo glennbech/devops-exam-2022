@@ -7,19 +7,13 @@ Det er en del utfordringer med slik de jobber idag.. De deployer kun første man
 
 De bryter prinsippet over kontinuerlig integrasjon, med at de samler alt sammen på en gang og håper det virker. Dette vil føre til mye waste av arbeidskraft hvor de da må finne feilene i en nøste av problemer. Hadde de lastet opp kontinuerlig ville det mest sannynligvis vært lettere å finne de ulike feilene. Derfor burde de ha en devops pipeline hvor koden skal flyte igjennom flere kontrollere, sånn som tester, kompilering og builds. Deretter går det automatisk ut til kundenen.
 
-Devops prinsippene vil også ha mye mindre overleveringer, det er ingen som kjenner koden som har blitt skrevet bedre enn den personen som har utviklet det. Det er da veldig dumt at de overleverer det til en annen avdeling.  Derfor er det mye bedre om de er med i prossessen med å utlvere det til produksjon. 
+De overleverer kode til en annen avdeling, devops prinsippene for flow går imot det. prinsippene vil også ha mye mindre overleveringer, det er ingen som kjenner koden som har blitt skrevet bedre enn den personen som har utviklet det. Det er da veldig dumt at de overleverer det til en annen avdeling.  Derfor er det mye bedre om de er med i prossessen med å utlvere det til produksjon. Det kan også bety at avdelingen må waste tiden sin på å vente på overleveringen fra den andre avdelingen. Den tiden kunne de ha brukt på noe mye mer nyttig.
 
 
+Release kode ofte kan by på noen utfordringer. Det kan oppstå flere problemer med prosjektet som du ikke kunne forutse, dermed er det veldig bra at devops har et prinsipp som forebygger. Overvåking av systmene er veldig viktig slik at du kan se problemene før de oppstår eller blir værre. Om de hadde brukt noe feedback, så kan det hende at de ikke måtte rerolle mange ganger. Om kvaliteten blir sjekket ved kilden trenger det ikke å bli sjekket lengere ned i pipelinene med QA og tester for dårlig kode. 
 
-de deployer første mandag i kvartalet. (sjeldent)
-
-de gjorde oftere før men testere var dyrt. mye waste på å dobbelsjekke om at alt de hadde gjort ikke ødelegger. 
-
-- ruller tilbake til forrige versjon når de feiler. ny funksjonlaitet forsinket.
-
-- sender ferdig versjon FTP til en avdeling som skal innstalere det og og legge det ut. 
-
-
+De kan lage et cloudwatch dashboard for å kunne observere når noe feiler eller tidlig finne noen usedvanlige oppførsler. De kan lage alarmer som vekker devops folkene på natten om de trenger. 
+ 
 
 
 ## Del 2 - CI
