@@ -3,7 +3,7 @@
 ## Del 1 DevOps-prinsipper
 
 
-Det er en del utfordringer med slik de jobber idag.. De deployer kun første mandag i kvartalet. Dette fører til mye waste, det er mye tryggere og bedre om de heller hadde lastet opp kontinuerlig, dette hjelper det stakkarse devops teamet som må jobbe overtid på å innstalere og legge ut serverene som de får tilsendt. Dette er en stor waste med at De heller kan ha en kontonurlig utlvereing gjennom automatiske teseter og byggninger med foreksempel github actions. 
+Det er en del utfordringer med slik de jobber idag.. De deployer kun første mandag i kvartalet. Dette fører til mye waste, det er mye tryggere og bedre om de heller hadde lastet opp kontinuerlig, dette hjelper det stakkarse devops teamet som må jobbe overtid på å innstalere og legge ut serverene som de får tilsendt. Dette er en stor waste med at De heller kan ha en kontonurlig utlvereing gjennom automatiske teseter og byggninger med foreksempel github actions. Om de hadde automatisert tester ville de heller ikke hatt bru bruk for å ansettes så mange testere, da kunne personen som pushet det fikset testene med en gnang. 
 
 De bryter prinsippet over kontinuerlig integrasjon, med at de samler alt sammen på en gang og håper det virker. Dette vil føre til mye waste av arbeidskraft hvor de da må finne feilene i en nøste av problemer. Hadde de lastet opp kontinuerlig ville det mest sannynligvis vært lettere å finne de ulike feilene. Derfor burde de ha en devops pipeline hvor koden skal flyte igjennom flere kontrollere, sånn som tester, kompilering og builds. Deretter går det automatisk ut til kundenen.
 
