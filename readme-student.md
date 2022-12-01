@@ -3,6 +3,23 @@
 ## Del 1 DevOps-prinsipper
 
 
+Det er en del utfordringer med slik de jobber idag.. De deployer kun første mandag i kvartalet. Dette fører til mye waste, det er mye tryggere og bedre om de heller hadde lastet opp kontinuerlig, dette hjelper det stakkarse devops teamet som må jobbe overtid på å innstalere og legge ut serverene som de får tilsendt. Dette er en stor waste med at De heller kan ha en kontonurlig utlvereing gjennom automatiske teseter og byggninger med foreksempel github actions. 
+
+De bryter prinsippet over kontinuerlig integrasjon, med at de samler alt sammen på en gang og håper det virker. Dette vil føre til mye waste av arbeidskraft hvor de da må finne feilene i en nøste av problemer. Hadde de lastet opp kontinuerlig ville det mest sannynligvis vært lettere å finne de ulike feilene. Derfor burde de ha en devops pipeline hvor koden skal flyte igjennom flere kontrollere, sånn som tester, kompilering og builds. Deretter går det automatisk ut til kundenen.
+
+Devops prinsippene vil også ha mye mindre overleveringer, det er ingen som kjenner koden som har blitt skrevet bedre enn den personen som har utviklet det. Det er da veldig dumt at de overleverer det til en annen avdeling.  Derfor er det mye bedre om de er med i prossessen med å utlvere det til produksjon. 
+
+
+
+de deployer første mandag i kvartalet. (sjeldent)
+
+de gjorde oftere før men testere var dyrt. mye waste på å dobbelsjekke om at alt de hadde gjort ikke ødelegger. 
+
+- ruller tilbake til forrige versjon når de feiler. ny funksjonlaitet forsinket.
+
+- sender ferdig versjon FTP til en avdeling som skal innstalere det og og legge det ut. 
+
+
 
 
 ## Del 2 - CI
