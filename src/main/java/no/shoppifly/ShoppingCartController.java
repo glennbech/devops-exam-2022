@@ -1,7 +1,13 @@
 package no.shoppifly;
 
+import io.micrometer.core.annotation.Timed;
+import io.micrometer.core.instrument.Gauge;
+import io.micrometer.core.instrument.MeterRegistry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import java.util.HashMap;
+import java.util.Map;
+
 
 import java.util.List;
 
@@ -10,7 +16,11 @@ public class ShoppingCartController {
 
     @Autowired
     private final CartService cartService;
-
+    
+    private MeterRegistry meterRegistry;
+    
+    private Map<String, Item> carts = new HashMap<>();
+    
     public ShoppingCartController(CartService cartService) {
         this.cartService = cartService;
     }
@@ -25,8 +35,10 @@ public class ShoppingCartController {
      *
      * @return an order ID
      */
+    @Timed
     @PostMapping(path = "/cart/checkout")
     public String checkout(@RequestBody Cart cart) {
+        meterRegistry.counter("checkouts").increment();
         return cartService.checkout(cart);
     }
 
@@ -36,8 +48,22 @@ public class ShoppingCartController {
      *
      * @return the updated cart
      */
+    @Timed
     @PostMapping(path = "/cart")
     public Cart updateCart(@RequestBody Cart cart) {
+        meterRegistry.counter("carts.count").increment();
+        //meterRegistry.counter("carts.sum", checkout(cart)).increment(cart.items.);
+        
+        
+       
+        Gauge.builder("cart.value", carts,
+            e -> e.values()
+            .stream()
+            .map(Item::getUnitPrice)
+            .mapToDouble(Float::floatValue)
+            .sum())
+            .register(meterRegistry);
+        
         return cartService.update(cart);
     }
 
