@@ -16,9 +16,11 @@ jobs:
       CANDIDATE_ID: 1022
       CANDIDATE_EMAIL: thonem10@gmail.com
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v2
+
       - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v2
+        uses: hashicorp/setup-terraform@v1
 
       - name: Terraform Format
         id: fmt
@@ -27,6 +29,10 @@ jobs:
       - name: Terraform Init
         id: init
         run: terraform init
+
+      - name: Terraform Validate
+        id: validate
+        run: terraform validate -no-color
 
       - name: Terraform Plan
         id: plan
