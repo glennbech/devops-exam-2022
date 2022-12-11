@@ -31,7 +31,7 @@ resource "aws_cloudwatch_dashboard" "main" {
       "properties": {
         "metrics": [
           [
-            "${varcandidate_id}",
+            "${var.candidate_id}",
             "checkouts.value"
           ]
         ],
