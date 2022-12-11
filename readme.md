@@ -1,8 +1,4 @@
-[![Docker build](https://github.com/thonems/devops-exam-2022/actions/workflows/docker.yml/badge.svg)](https://github.com/thonems/devops-exam-2022/actions/workflows/docker.yml)
-
-[![Terraform CloudWatch](https://github.com/thonems/devops-exam-2022/actions/workflows/cloudwatch_dashboard.yml/badge.svg)](https://github.com/thonems/devops-exam-2022/actions/workflows/cloudwatch_dashboard.yml)
-
-[![CI pipeline](https://github.com/thonems/devops-exam-2022/actions/workflows/ci.yml/badge.svg)](https://github.com/thonems/devops-exam-2022/actions/workflows/ci.yml)
+[![Docker build](https://github.com/thonems/devops-exam-2022/actions/workflows/docker.yml/badge.svg)](https://github.com/thonems/devops-exam-2022/actions/workflows/docker.yml) [![Terraform CloudWatch](https://github.com/thonems/devops-exam-2022/actions/workflows/cloudwatch_dashboard.yml/badge.svg)](https://github.com/thonems/devops-exam-2022/actions/workflows/cloudwatch_dashboard.yml) [![CI pipeline](https://github.com/thonems/devops-exam-2022/actions/workflows/ci.yml/badge.svg)](https://github.com/thonems/devops-exam-2022/actions/workflows/ci.yml)
 
 
 # Devops Exam
