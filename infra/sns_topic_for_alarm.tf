@@ -12,7 +12,7 @@ resource "aws_cloudwatch_metric_alarm" "zerosum" {
 
   alarm_description         = "goes off when cart over 5 in 15 min "
   insufficient_data_actions = []
-  alarm_actions       = [aws_sns_topic.user_updates.arn]
+  alarm_actions       = [aws_sns_topic.alarms.arn]
 }
 
 resource "aws_sns_topic" "alarms" {
