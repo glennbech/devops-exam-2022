@@ -61,7 +61,7 @@ Jeg opprettet et repository ved navn 1022 som er kandidatnr. Her blir det autmoa
 ### MICROMETER
 
 ## Oppgave 2
-Her fikk jeg litt problemer,jeg har opprettet metrics på dashboardet med alle verdiene. Problemet er at jeg fikk mye credentidals feil med force updates hvor den ikke ville funke selvom jeg brukte "aws configure". Dermed fikk jeg store problemer når jeg skulle laste opp data. Jeg har også kommentert ut gauge builder i kontrolleren med at den bare ga meg en null pointer exception. 
+Her fikk jeg litt problemer,jeg har opprettet metrics på dashboardet med alle verdiene. Problemet er at jeg fikk mye credentidals feil med force updates hvor den ikke ville funke selvom jeg brukte "aws configure". Dermed fikk jeg store problemer når jeg skulle laste opp data. Jeg har lagt inn det jeg tror skal funke, men får ikke testet det med at jeg alltid får en feilmelding. Jeg fikk det til å funke lokalt uten error, men aws configure gir plutselig noen problemer. 
 
 
 ### Terraform and Cloudwatch
