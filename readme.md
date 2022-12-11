@@ -74,6 +74,8 @@ Her fikk jeg litt problemer,jeg har opprettet metrics på dashboardet med alle v
 
 Problemene til gaffel kommer fra at jim allerede har opprettet en s3 bucket med terraform fra før. Når terraform oppretterer noe i miljøet vil den lage en state-fil hvor den holder kontroll på hva som har blitt laget eller slettet. Når folkene i gaffel har kjørt "terraform apply" ble de filene opprettet. Om state filene ikke hadde blitt slettet ville terraform visst hva den skulle gjøre, men nå vet den ikke hva som er i miljøet, derfor prøver den å lage s3 bucketen på nytt. De har mest sannsynligvis slettet denne bucketen fra før, men det vet ikke terraform uten statefiles.
 
+Jeg fikk problemer med at terraform ikke ville lage min egen bucket første gang, dermed lagde jeg den bare manuelt. 
+
 Jeg har fått den til å kjøre plan med pull request og apply når de pusher. 
 
 
