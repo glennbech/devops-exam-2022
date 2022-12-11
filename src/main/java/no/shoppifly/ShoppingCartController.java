@@ -53,6 +53,7 @@ public class ShoppingCartController {
     @Timed
     @PostMapping(path = "/cart")
     public Cart updateCart(@RequestBody Cart cart) {
+        //Når jeg legger meterregistry her vil jeg få en null point exception
         //meterRegistry.counter("carts.count").increment(1);
         //fikk ikke til å få summen
        // meterRegistry.counter("carts.sum", checkout(cart)).increment(1);
@@ -73,10 +74,11 @@ public class ShoppingCartController {
     }
 
     /*
-        @Override
+
+    @Override
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
 
-        // Verdi av total
+       // Verdi av total
         Gauge.builder("cart.count", cartDatabase,
                 b -> b.values().size()).register(meterRegistry);
 
