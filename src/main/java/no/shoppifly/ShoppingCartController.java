@@ -18,10 +18,11 @@ public class ShoppingCartController {
 
     @Autowired
     private final CartService cartService;
-    
+
+    @Autowired
     private MeterRegistry meterRegistry;
     
-    private Map<String, Item> cartDatabase = new HashMap<>();
+    private Map<Cart, Item> cartDatabase = new HashMap<>();
     
     public ShoppingCartController(CartService cartService) {
         this.cartService = cartService;
@@ -50,16 +51,26 @@ public class ShoppingCartController {
      *
      * @return the updated cart
      */
-    @Timed
+
+    @Timed(value = "carts.count")
     @PostMapping(path = "/cart")
     public Cart updateCart(@RequestBody Cart cart) {
-        //Når jeg legger meterregistry her vil jeg få en null point exception
-        //meterRegistry.counter("carts.count").increment(1);
-        //fikk ikke til å få summen
+        meterRegistry.counter("carts.count").increment();
        // meterRegistry.counter("carts.sum", checkout(cart)).increment(1);
-        /*
 
-*/
+        for (Item i : cart.getItems()){
+            cartDatabase.put(cart,i);
+        }
+
+        Gauge.builder(
+                "cartsvalue", cartDatabase,
+                e -> e.values().stream()
+                .map(Item::getUnitPrice)
+                .mapToDouble(Float::floatValue)
+                .sum())
+                .register(meterRegistry);
+
+
         return cartService.update(cart);
     }
 
@@ -68,28 +79,9 @@ public class ShoppingCartController {
      *
      * @return
      */
+    @Timed
     @GetMapping(path = "/carts")
     public List<String> getAllCarts() {
         return cartService.getAllsCarts();
     }
-
-    /*
-
-    @Override
-    public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
-
-       // Verdi av total
-        Gauge.builder("cart.count", cartDatabase,
-                b -> b.values().size()).register(meterRegistry);
-
-        Gauge.builder("cart.value", cartDatabase,
-                b -> b.values()
-                        .stream()
-                        .map(Item::getUnitPrice)
-                        .mapToDouble(Float::floatValue)
-                        .sum())
-                .register(meterRegistry);
-    }
-     */
-
 }
