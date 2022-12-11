@@ -31,7 +31,7 @@ resource "aws_cloudwatch_dashboard" "main" {
       "properties": {
         "metrics": [
           [
-            "${var.student_name}",
+            "${varcandidate_id}",
             "checkouts.value"
           ]
         ],
@@ -50,7 +50,7 @@ resource "aws_cloudwatch_dashboard" "main" {
       "properties": {
         "metrics": [
           [
-            "${var.student_name}",
+            "${var.candidate_id}",
             "checkout_latency.value"
           ]
         ],
@@ -69,7 +69,7 @@ resource "aws_cloudwatch_dashboard" "main" {
       "properties": {
         "metrics": [
           [
-            "${var.student_name}",
+            "${var.candidate_id}",
             "cartsvalue.value"
           ]
         ],
