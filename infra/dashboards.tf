@@ -31,8 +31,8 @@ resource "aws_cloudwatch_dashboard" "main" {
       "properties": {
         "metrics": [
           [
-            "${varcandidate_id}",
-            "checkouts.value"
+            "${var.candidate_id}",
+            "checkouts_count.value"
           ]
         ],
         "period": 300,
@@ -55,9 +55,9 @@ resource "aws_cloudwatch_dashboard" "main" {
           ]
         ],
         "period": 300,
-        "stat": "Maximum",
+        "stat": "Average",
         "region": "eu-west-1",
-        "title": "total checkouts"
+        "title": "latency checkouts"
       }
     },
     {

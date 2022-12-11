@@ -37,10 +37,10 @@ public class ShoppingCartController {
      *
      * @return an order ID
      */
-    @Timed
+    @Timed("checkout_latency")
     @PostMapping(path = "/cart/checkout")
     public String checkout(@RequestBody Cart cart) {
-        meterRegistry.counter("checkouts").increment();
+        meterRegistry.counter("checkouts_count").increment();
         return cartService.checkout(cart);
     }
 
@@ -53,17 +53,12 @@ public class ShoppingCartController {
     @Timed
     @PostMapping(path = "/cart")
     public Cart updateCart(@RequestBody Cart cart) {
-        meterRegistry.counter("carts.count").increment(1);
+        //meterRegistry.counter("carts.count").increment(1);
         //fikk ikke til å få summen
-        //meterRegistry.counter("carts.sum", checkout(cart)).increment(1);
-            Gauge.builder("cart.value", cartDatabase,
-            e -> e.values()
-            .stream()
-            .map(Item::getUnitPrice)
-            .mapToDouble(Float::floatValue)
-            .sum())
-            .register(meterRegistry);
+       // meterRegistry.counter("carts.sum", checkout(cart)).increment(1);
+        /*
 
+*/
         return cartService.update(cart);
     }
 
