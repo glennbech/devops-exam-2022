@@ -4,6 +4,8 @@ import io.micrometer.core.annotation.Timed;
 import io.micrometer.core.instrument.Gauge;
 import io.micrometer.core.instrument.MeterRegistry;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.ApplicationListener;
 import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -19,7 +21,7 @@ public class ShoppingCartController {
     
     private MeterRegistry meterRegistry;
     
-    private Map<String, Item> carts = new HashMap<>();
+    private Map<String, Item> cartDatabase = new HashMap<>();
     
     public ShoppingCartController(CartService cartService) {
         this.cartService = cartService;
@@ -51,19 +53,17 @@ public class ShoppingCartController {
     @Timed
     @PostMapping(path = "/cart")
     public Cart updateCart(@RequestBody Cart cart) {
-        meterRegistry.counter("carts.count").increment();
-        //meterRegistry.counter("carts.sum", checkout(cart)).increment(cart.items.);
-        
-        
-       
-        Gauge.builder("cart.value", carts,
+        meterRegistry.counter("carts.count").increment(1);
+        //fikk ikke til å få summen
+        //meterRegistry.counter("carts.sum", checkout(cart)).increment(1);
+            Gauge.builder("cart.value", cartDatabase,
             e -> e.values()
             .stream()
             .map(Item::getUnitPrice)
             .mapToDouble(Float::floatValue)
             .sum())
             .register(meterRegistry);
-        
+
         return cartService.update(cart);
     }
 
@@ -77,5 +77,22 @@ public class ShoppingCartController {
         return cartService.getAllsCarts();
     }
 
+    /*
+        @Override
+    public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
+
+        // Verdi av total
+        Gauge.builder("cart.count", cartDatabase,
+                b -> b.values().size()).register(meterRegistry);
+
+        Gauge.builder("cart.value", cartDatabase,
+                b -> b.values()
+                        .stream()
+                        .map(Item::getUnitPrice)
+                        .mapToDouble(Float::floatValue)
+                        .sum())
+                .register(meterRegistry);
+    }
+     */
 
 }
